@@ -1,6 +1,10 @@
 # Configuring Our Prompt
 # ======================
 
+  # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
+  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care 
+  # enough to change it
+
   # This function is called in your prompt to output your active git branch.
   function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -39,10 +43,6 @@
     # NODE_PATH
     # Node Path from Homebrew I believe
     export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
-
-    # PYTHON_SHARE
-    # Python Shared Path from Homebrew I believe
-    export PYTHON_SHARE='/usr/local/share/python'
 
     # Those NODE & Python Paths won't break anything even if you
     # don't have NODE or Python installed. Eventually you will and
@@ -85,7 +85,7 @@
     # Our PATH variable is special and very important. Whenever we type a command into our shell,
     # it will try to find that command within a directory that is defined in our PATH.
     # Read http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/ for more on that.
-    export PATH="$USR_PATHS:$PYTHON_SHARE:$PATH"
+    export PATH="$USR_PATHS:$PATH"
 
     # If you go into your shell and type: $PATH you will see the output of your current path.
     # For example, mine is:
