@@ -150,6 +150,8 @@ function extract () {
   alias gb="git branch"
   alias gba="git branch -a"
 
+# Case-Insensitive Auto Completion
+bind "set completion-ignore-case on" 
 
 # Final Configurations and Plugins
 # =====================
