@@ -4,10 +4,16 @@
   # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
   # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care 
   # enough to change it
+  
+  # This function checks if your branch has uncommited changes on them.
+  function parse_git_dirty {
+    [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working directory clean" ]] && echo " ✔"
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " ✘"
+  }
 
   # This function is called in your prompt to output your active git branch.
   function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
   }
 
   # This function builds your prompt. It is called below
@@ -19,7 +25,7 @@
     # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
     # Here is where we actually export the PS1 Variable which stores the text for your prompt
-    export PS1="\[\e]2;\u@\h\a[\[\e[37;44;1m\]\t\[\e[0m\]]$RED\$(parse_git_branch) \[\e[32m\]\W\[\e[0m\]\n\[\e[0;31m\]$CHAR \[\e[0m\]"
+    export PS1="\u [\[\e[37;44;1m\]\t\[\e[0m\]]$RED\$(parse_git_branch) \[\e[32m\]\W\[\e[0m\]\n\[\e[0;31m\]$CHAR \[\e[0m\]"
       PS2='> '
       PS4='+ '
     }
