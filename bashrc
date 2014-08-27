@@ -159,4 +159,4 @@ bind "set completion-ignore-case on"
   # RVM
   # Mandatory loading of RVM into the shell
   # This must be the last line of your bash_profile always
-  [[ -s "/Users/$USER/.rvm/scripts/rvm" ]] && source "/Users/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
