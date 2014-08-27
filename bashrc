@@ -101,7 +101,7 @@
 # USE: desktop
 #      desktop subfolder
 function desktop {
-  cd /Users/$USER/Desktop/$@
+  cd /$HOME/Desktop/$@
 }
 
 # A function to easily grep for a matching process
@@ -159,4 +159,4 @@ bind "set completion-ignore-case on"
   # RVM
   # Mandatory loading of RVM into the shell
   # This must be the last line of your bash_profile always
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+  [[ -s "/$HOME/.rvm/scripts/rvm" ]] && source "/$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
