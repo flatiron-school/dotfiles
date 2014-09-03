@@ -1,6 +1,7 @@
+# THIS IS CONFIGURED FOR UBUNTU
+
 # Configuring Our Prompt
 # ======================
-
   # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
   # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care 
   # enough to change it
