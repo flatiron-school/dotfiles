@@ -92,7 +92,7 @@
     # Our PATH variable is special and very important. Whenever we type a command into our shell,
     # it will try to find that command within a directory that is defined in our PATH.
     # Read http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/ for more on that.
-    export POSTGRES_PATH="/usr/lib/postgresql/9.2/bin"
+    export POSTGRES_PATH="/usr/lib/postgresql/9.3/bin"
 
     export PATH="$USR_PATHS:$POSTGRES_PATH:$PATH"
     # If you go into your shell and type: $PATH you will see the output of your current path.
