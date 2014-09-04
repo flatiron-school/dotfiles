@@ -92,8 +92,9 @@
     # Our PATH variable is special and very important. Whenever we type a command into our shell,
     # it will try to find that command within a directory that is defined in our PATH.
     # Read http://blog.seldomatt.com/blog/2012/10/08/bash-and-the-one-true-path/ for more on that.
-    export PATH="$USR_PATHS:$PATH"
+    export POSTGRES_PATH="/usr/lib/postgresql/9.2/bin"
 
+    export PATH="$USR_PATHS:$POSTGRES_PATH:$PATH"
     # If you go into your shell and type: $PATH you will see the output of your current path.
     # For example, mine is:
     # /Users/avi/.rvm/gems/ruby-1.9.3-p392/bin:/Users/avi/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/avi/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/avi/.rvm/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/mysql/bin:/usr/local/share/python:/bin:/usr/sbin:/sbin:
