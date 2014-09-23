@@ -149,6 +149,13 @@ function extract () {
   alias gca="git commit -v -a"
   alias gb="git branch"
   alias gba="git branch -a"
+  alias gcam="git commit -am"
+  alias gbb="git branch -b"
+  
+
+  # Sublime Text 3
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl' 
+
 
 # Case-Insensitive Auto Completion
 bind "set completion-ignore-case on" 
