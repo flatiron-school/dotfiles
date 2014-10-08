@@ -158,6 +158,11 @@ function extract () {
   alias gb="git branch"
   alias gba="git branch -a"
 
+  # short cuts for running a postgres server
+  # NOTE this only works on Ubuntu
+  # ex psql_server start, psql_server stop, psql_server restart
+  alias psql_server="sudo /etc/init.d/postgresql"
+
 # Case-Insensitive Auto Completion
 bind "set completion-ignore-case on" 
 
