@@ -141,6 +141,7 @@ function extract () {
   alias l='ls -lah'
 
   # Git
+  alias gcl="git clone"
   alias gst="git status"
   alias gl="git pull"
   alias gp="git push"
