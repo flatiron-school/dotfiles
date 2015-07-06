@@ -64,6 +64,9 @@
     export GIT_EDITOR="subl -w"
     export EDITOR="subl -w"
 
+    # Version
+    # What version of the Flatiron School bash profile this is
+    export FLATIRON_VERSION='1.0'
   # Paths
 
     # The USR_PATHS variable will just store all relevant /usr paths for easier usage
