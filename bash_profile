@@ -66,7 +66,7 @@
 
     # Version
     # What version of the Flatiron School bash profile this is
-    export FLATIRON_VERSION='1.0'
+    export FLATIRON_VERSION='1.1'
   # Paths
 
     # The USR_PATHS variable will just store all relevant /usr paths for easier usage
@@ -161,6 +161,9 @@ function extract () {
 
 # Case-Insensitive Auto Completion
   bind "set completion-ignore-case on" 
+  
+# Postgres
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # Final Configurations and Plugins
 # =====================
