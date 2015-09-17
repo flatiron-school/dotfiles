@@ -1,0 +1,10 @@
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = /Users/<YOUR HOME DIRECTORY>/.gitignore
+[github]
+  user = <GITHUB USER>
+  token = <API TOKEN> # https://github.com/settings/applications
+  email = <GITHUB EMAIL ADDRESS>
+[user]
+  name = <GITHUB USER>
+  email = <GITHUB EMAIL ADDRESS>
