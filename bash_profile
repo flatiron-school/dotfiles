@@ -12,16 +12,22 @@
 
   # This function builds your prompt. It is called below
   function prompt {
-    # Define some local colors
-    local         RED="\[\033[0;31m\]" # This syntax is some weird bash color thing I never
-    local   LIGHT_RED="\[\033[1;31m\]" # really understood
-    local        CHAR="♥"
-    local   BLUE="\[\e[0;49;34m\]"
+    # Define the prompt character
+    local   CHAR="♥"
 
+    # Define some local colors
+    local   RED="\e[0;31m"
+    local   BLUE="\e[0;34m"
+    local   GREEN="\e[0;32m"
+    local   GRAY_TEXT_BLUE_BACKGROUND="\e[37;44;1m"
+
+    # Define a variable to reset the text color
+    local   RESET="\e[0m"
+    
     # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
     # Here is where we actually export the PS1 Variable which stores the text for your prompt
-    export PS1="\[\e]2;\u@\h\a[\[\e[37;44;1m\]\t\[\e[0m\]]$RED\$(parse_git_branch) \[\e[32m\]\W\[\e[0m\]\n\[\e[0;31m\]$BLUE//$RED $CHAR \[\e[0m\]"
+    export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED\$(parse_git_branch) $GREEN\W\n$BLUE//$RED $CHAR $RESET"
       PS2='> '
       PS4='+ '
     }
