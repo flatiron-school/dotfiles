@@ -163,7 +163,7 @@ function extract () {
   bind "set completion-ignore-case on" 
   
 # Postgres
-export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
 # Final Configurations and Plugins
 # =====================
