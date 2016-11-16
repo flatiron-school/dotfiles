@@ -16,13 +16,13 @@
     local   CHAR="♥"
 
     # Define some local colors
-    local   RED="\e[0;31m"
-    local   BLUE="\e[0;34m"
-    local   GREEN="\e[0;32m"
-    local   GRAY_TEXT_BLUE_BACKGROUND="\e[37;44;1m"
+    local   RED="\[\e[0;31m\]"
+    local   BLUE="\[\e[0;34m\]"
+    local   GREEN="\[\e[0;32m\]"
+    local   GRAY_TEXT_BLUE_BACKGROUND="\[\e[37;44;1m\]"
 
     # Define a variable to reset the text color
-    local   RESET="\e[0m"
+    local   RESET="\[\e[0m\]"
 
     # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
