@@ -2,7 +2,7 @@
 # ======================
 
   # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
-  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care 
+  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care
   # enough to change it
 
   # This function is called in your prompt to output your active git branch.
@@ -41,6 +41,11 @@
   # If you break your prompt, just delete the last thing you did.
   # And that's why it's good to keep your dotfiles in git too.
 
+  # A handy function to open your bash profile from any directory
+  function bp {
+    $EDITOR ~/.bash_profile
+  }
+
 # Environment Variables
 # =====================
   # Library Paths
@@ -65,10 +70,10 @@
     # Editors
     # Tells your shell that when a program requires various editors, use sublime.
     # The -w flag tells your shell to wait until sublime exits
-    export VISUAL="subl -w"
-    export SVN_EDITOR="subl -w"
-    export GIT_EDITOR="subl -w"
-    export EDITOR="subl -w"
+    export VISUAL="atom"
+    export SVN_EDITOR="atom"
+    export GIT_EDITOR="atom"
+    export EDITOR="atom"
 
     # Version
     # What version of the Flatiron School bash profile this is
@@ -166,8 +171,8 @@ function extract () {
 
 
 # Case-Insensitive Auto Completion
-  bind "set completion-ignore-case on" 
-  
+  bind "set completion-ignore-case on"
+
 # Postgres
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
