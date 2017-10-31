@@ -8,8 +8,8 @@
   
   # This function checks if your branch has uncommited changes on them.
   function parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working directory clean" ]] && echo " ✔"
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " ✘"
+    [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working tree clean" ]] && echo " ✔"
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo " ✘"
   }
 
   # This function is called in your prompt to output your active git branch.
