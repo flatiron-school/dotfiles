@@ -2,7 +2,7 @@
 # ======================
 
   # if you install git via homebrew, or install the bash autocompletion via homebrew, you get __git_ps1 which you can use in the PS1
-  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care 
+  # to display the git branch.  it's supposedly a bit faster and cleaner than manually parsing through sed. i dont' know if you care
   # enough to change it
 
   # This function is called in your prompt to output your active git branch.
@@ -168,9 +168,12 @@ function extract () {
   alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
   alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+  # Pointing rspec to 'learn-test' (which runs rspec) to capture more lab usage data
+  alias rspec='learn test'
+
 # Case-Insensitive Auto Completion
-  bind "set completion-ignore-case on" 
-  
+  bind "set completion-ignore-case on"
+
 # Postgres
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 
