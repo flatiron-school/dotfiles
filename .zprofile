@@ -168,7 +168,7 @@ function extract () {
   alias gba="git branch -a"
   alias gcam="git commit -am"
   alias gbb="git branch -b"
-  alias yooo="echo hey"
+  alias fis="learn love code!"
 
 
 # Case-Insensitive Auto Completion
