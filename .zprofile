@@ -168,11 +168,11 @@ function extract () {
   alias gba="git branch -a"
   alias gcam="git commit -am"
   alias gbb="git branch -b"
-  alias fis="learn love code!"
+  alias fis="echo learn love code!"
 
 
 # Case-Insensitive Auto Completion
-  bind "set completion-ignore-case on"
+#   bind "set completion-ignore-case on"
 
 # Postgres
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
