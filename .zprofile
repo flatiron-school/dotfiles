@@ -10,29 +10,37 @@
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
   }
 
-  # This function builds your prompt. It is called below
+  # # This function builds your prompt. It is called below
   # function prompt {
   #   # Define the prompt character
   #   local   CHAR="♥"
-  #
+  
   #   # Define some local colors
   #   local   RED="\[\e[0;31m\]"
   #   local   BLUE="\[\e[0;34m\]"
   #   local   GREEN="\[\e[0;32m\]"
   #   local   GRAY_TEXT_BLUE_BACKGROUND="\[\e[37;44;1m\]"
-  #
+  
   #   # Define a variable to reset the text color
   #   local   RESET="\[\e[0m\]"
-  #
+  
   #   # ♥ ☆ - Keeping some cool ASCII Characters for reference
-  #
-  #   # Here is where we actually export the PS1 Variable which stores the text for your prompt
-  #   export PS1="\[\e]2;\u@\h\a[$GRAY_TEXT_BLUE_BACKGROUND\t$RESET]$RED\$(parse_git_branch) $GREEN\W\n$BLUE//$RED $CHAR $RESET"
+
+  #   autoload -U colors && colors
+    
+  #   # # Here is where we actually export the PS1 Variable which stores the text for your prompt
+  #   PS1="%{$fg[cyan]%}%(3~|%-1~/.../%2~|%~) %{$reset_color%}% %{$fg[red]%}%$(parse_git_branch)% %{$reset_color%}%  "
   #     PS2='> '
   #     PS4='+ '
-  #   }
 
-  # Finally call the function and our prompt is all pretty
+  #   # Additional Option: Minimal // ♥ > Prompt
+  #   # PS1="%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}%  "
+  #   #   PS2='> '
+  #   #   PS4='+ '
+
+  # }
+
+  # # Finally call the function and our prompt is all pretty
   # prompt
 
   # For more prompt coolness, check out Halloween Bash:
@@ -170,7 +178,6 @@ function extract () {
   alias gbb="git branch -b"
   alias fis="echo learn love code!"
 
-
 # Case-Insensitive Auto Completion
 #   bind "set completion-ignore-case on"
 
@@ -186,9 +193,11 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
     . `brew --prefix`/etc/bash_completion
   fi
 
+  export NVM_DIR="$HOME/.nvm"
+  
   # RVM
-  # Mandatory loading of RVM into the shell
-  # This must be the last line of your bash_profile always
+  # This is an outdated method of loading RVM into the shell
+  # But is kept here temporarily as a backup. This must be the last line of your bash_profile always
+  # Run 'rvm get stable --auto-dotfiles' will remove this line and update ~/.zshrc
   [[ -s "/Users/$USER/.rvm/scripts/rvm" ]] && source "/Users/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-export NVM_DIR="$HOME/.nvm"
-export NVM_DIR="$HOME/.nvm"
+
