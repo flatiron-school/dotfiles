@@ -29,7 +29,7 @@
   #   autoload -U colors && colors
     
   #   # # Here is where we actually export the PS1 Variable which stores the text for your prompt
-  #   PS1="%{$fg[cyan]%}%(3~|%-1~/.../%2~|%~) %{$reset_color%}% %{$fg[red]%}%$(parse_git_branch)% %{$reset_color%}%  "
+  #   PS1="%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}% %{$fg[red]%}%$(parse_git_branch)% %{$reset_color%}%  "
   #     PS2='> '
   #     PS4='+ '
 
