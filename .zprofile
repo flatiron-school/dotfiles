@@ -11,7 +11,7 @@
   }
 
   # # This function builds your prompt. It is called below
-  # function prompt {
+  function prompt {
   #   # Define the prompt character
   #   local   CHAR="♥"
   
@@ -26,22 +26,23 @@
   
   #   # ♥ ☆ - Keeping some cool ASCII Characters for reference
 
-  #   autoload -U colors && colors
+    autoload -U colors && colors
     
   #   # # Here is where we actually export the PS1 Variable which stores the text for your prompt
   #   PS1="%{$fg[cyan]%}%(4~|%-1~/.../%2~|%~) %{$reset_color%}%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}% "
   #     PS2='> '
   #     PS4='+ '
 
-  #   # Additional Option: Minimal // ♥ > Prompt
-  #   # PS1="%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ > %{$reset_color%}%  "
-  #   #   PS2='> '
-  #   #   PS4='+ '
+    # Additional Option: Minimal // ♥ > Prompt
+    precmd() { print -rP "%{$fg[red]%}$(parse_git_branch)%{$reset_color%}% %{$fg[green]%}%1d %{$reset_color%}%" }
+    PS1="%{$fg[blue]%}// %{$reset_color%}% %{$fg[red]%}♥ %{$reset_color%}% "
+      PS2='> '
+      PS4='+ '
 
-  # }
+  }
 
   # # Finally call the function and our prompt is all pretty
-  # prompt
+  prompt
 
   # For more prompt coolness, check out Halloween Bash:
   # http://xta.github.io/HalloweenBash/
@@ -179,7 +180,18 @@ function extract () {
   alias fis="echo learn love code!"
 
 # Case-Insensitive Auto Completion
-#   bind "set completion-ignore-case on"
+  # bind "set completion-ignore-case on"
+
+# # Using this for Case-Insensitive Auto Completion
+# # Do not know if this is the best solution
+
+# zstyle ':completion:*' matcher-list '' \
+# 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \
+# '+l:|?=** r:|?=**'
+
+# # Initialize the autocompletion
+
+# autoload -Uz compinit && compinit -i
 
 # Postgres
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
