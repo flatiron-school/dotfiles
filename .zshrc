@@ -21,5 +21,8 @@ prompt
 # If you break your prompt, just delete the last thing you did.
   # And that's why it's good to keep your dotfiles in git too.
 
+# resolves install permission errors
+export GEM_HOME="$HOME/.gem"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
