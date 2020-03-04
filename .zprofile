@@ -1,6 +1,6 @@
-  # A handy function to open your bash profile from any directory
-  function bp {
-    $EDITOR ~/.bash_profile
+  # A handy function to open your zprofile from any directory
+  function zp {
+    $EDITOR ~/.zprofile
   }
 
 # Environment Variables
