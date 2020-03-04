@@ -175,10 +175,3 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
   fi
 
   export NVM_DIR="$HOME/.nvm"
-  
-  # RVM
-  # This is an outdated method of loading RVM into the shell
-  # But is kept here temporarily as a backup. This must be the last line of your bash_profile always
-  # Run 'rvm get stable --auto-dotfiles' will remove this line and update ~/.zshrc
-  [[ -s "/Users/$USER/.rvm/scripts/rvm" ]] && source "/Users/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
