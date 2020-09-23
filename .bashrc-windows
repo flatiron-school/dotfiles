@@ -110,7 +110,7 @@ alias l='ls -CF'
 
 
 # Add alias for going to the labs directory automatically
-alias labs="cd ~/Development/Flatiron/labs"
+alias labs="cd ~/development/flatiron/labs"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
