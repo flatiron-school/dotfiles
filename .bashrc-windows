@@ -103,10 +103,10 @@ alias l='ls -CF'
 # Check if necessary directories exist
 # And make directories if they don't exist
 
-if [ ! -d "~/Development/Flatiron" ]
-  then
-    mkdir "~/Development/Flatiron" && mkdir "~/Development/Flatiron/labs" 
-fi
+# if [ ! -d "~/Development/Flatiron" ]
+#  then
+#    mkdir "~/Development/Flatiron" && mkdir "~/Development/Flatiron/labs" 
+# fi
 
 
 # Add alias for going to the labs directory automatically
