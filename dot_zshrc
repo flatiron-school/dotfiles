@@ -1,0 +1,118 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/iar/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+plugins=( git zsh-syntax-highlighting zsh-autosuggestions )
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export EDITOR="code -w"
+
+# Aliases
+
+# Project Prerequisites
+alias clean="rm -rf ~/Library/Developer/Xcode/DerivedData; ~/src/xplat/tools/buck/bin/buck clean"
+alias sup="./submodule_update.sh"
+alias gen="./ios_gen_module_project"
+alias warm="cd ~/src/xplat; clean; git pull master; git merge master; sup; mcup; mapp; mwire"
+
+# Make Projects
+alias mcup="make project_cup"
+alias mapp="make project_dbapp"
+alias mwire="./ios_gen_module_project -with-dependencies-tests -o //ios/dbapp/photos/wiring:wiring"
+
+# Open Projects
+alias cup="open buck-out/gen/ios/cup/app/Cup.xcodeproj/project.xcworkspace"
+alias app="open buck-out/gen/dbapp-ios/Dropbox/Dropbox.xcodeproj/project.xcworkspace"
+alias wire="open /Users/iar/src/xplat/buck-out/gen/ios/dbapp/photos/wiring/wiring.xcodeproj"
+
+# Combos
+alias freshcup="sup && mcup && cup"
+alias freshapp="sup && mapp && app"
+alias freshwire="sup && mwire && wire"
+
+# Buck
+alias buck="./tools/buck/bin/buck"
+alias bb="buck build"
+alias bt="buck test"
+
+# Xplat Tools
+alias stest="./tools/ios/run_unit_tests_selective.py"
+alias seltest="stest"
+alias setup="./tools/setup/repo_setup.py ios"
+
+# Arcanist
+alias adf="arc diff"
+alias lint="arc lint"
+
+# Git
+alias gpl="git pull"
+alias gco="git checkout"
+alias gst="git stash"
+alias gus="git unstash"
+alias gbr="git branch"
+alias gcm="git commit -m"
+alias gam="git commit --amend -m"
+alias grw="git reword"
+alias grb="git rebase"
+
+# Chezmoi
+alias chup="chezmoi update"
+
+# Misc
+alias ohmyzsh="code ~/.oh-my-zsh"
+
+# Add ssh key to keychain
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# From repo_setup:
+eval "$(pyenv init -)"
+
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+
+# From repo_setup:
+export PYENV_ROOT="$HOME/.pyenv"
